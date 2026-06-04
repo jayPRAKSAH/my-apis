@@ -1,0 +1,16 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: MY-APIS
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+ 
+
+functions:
+  hello:
+    handler: hello.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
